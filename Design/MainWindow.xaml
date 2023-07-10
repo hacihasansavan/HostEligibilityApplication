@@ -1,0 +1,594 @@
+﻿<Window x:Class="Design.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Design"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="960"
+        Width="1440"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        AllowsTransparency="True">
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--<Border Background="#991C1D31"  
+              
+                CornerRadius="25" />-->
+        <Border Background="#99000000" CornerRadius="25" Grid.RowSpan="2" />
+        <Button x:Name="btnExit"
+        Content="X"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Width="30"
+        Height="30"
+        Margin="0,12,10,0"
+        Background="Transparent"
+        Foreground="White"
+        BorderBrush="Transparent"
+        FontSize="16"
+        Click="btnExit_Click"/>
+
+        <!--<Button x:Name="btnMaximize"
+        Content="□"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Width="30"
+        Height="30"
+        Margin="0,10,45,0"
+        Background="Transparent"
+        Foreground="White"
+        BorderBrush="Transparent"
+        FontSize="20"
+        Click="btnMaximize_Click"/>-->
+
+        <Button x:Name="btnMinimize"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Width="30"
+        Height="30"
+        Margin="0,12,45,0"
+        Background="Transparent"
+        FontSize="30"
+        BorderBrush="Transparent"
+        Click="btnMinimize_Click">
+            <Button.Content>
+                <Grid>
+                    <Path Data="M0,5 L8,5" Stroke="White" StrokeThickness="2"/>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <!-- 801C1D31  991C1D31 CC1C1D31Transparancy -->
+        <Grid Margin="30,0,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120" />
+                <RowDefinition Height="400" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <!--// Panel 1 //-->
+
+            <!--// Panel 1.1 //-->
+
+            <!--// Panel 1 //-->
+
+            <Border
+                    CornerRadius="20"
+                    Margin="63,40,60,127" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#DF208F"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#DFCF20"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="59"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="34,0,34,0" />
+
+                    <Border Background="#FFFFFF"
+                            Height="108"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,212,10,0" />
+                    <Border Background="#FFFFFF"
+                            Height="108"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,79,10,0" />
+
+                    <TextBlock Text="Benchmark Score:"
+                                FontWeight="Medium"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Margin="0,227,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock x:Name ="cpuBenchMarkScore"
+                               Text="Calculating..."
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="25"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,266,0,0" RenderTransformOrigin="0.689,1.927" Height="54" Width="238" />
+
+                    <TextBlock
+                                Text="CPU"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="32"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Right"
+                               Margin="0,10,100,374" Width="66" RenderTransformOrigin="0.491,0.51" ><Run Language="tr-tr"/></TextBlock>
+
+                    <TextBlock Text="Name:"
+                                FontWeight="Medium"
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="28"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Margin="0,79,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock  x:Name ="cpuName"
+                                Text="12th Gen Intel(R) Core(TM) i5-10210U"
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="25                                "
+                               TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="22,123,0,0" RenderTransformOrigin="0.689,1.927" Height="83" Width="258" />
+
+                </Grid>
+
+            </Border>
+            <!--// Panel 2 //-->
+
+
+            <Border
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    Margin="290,40,28,127" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#27BDE9"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#ABDB54"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="292*"/>
+                        <RowDefinition Height="141*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="#FFFFFF"
+                            Height="59"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="34,0,34,0" />
+
+
+                    <Border Background="#FFFFFF"
+                            Height="108"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,79,10,0" />
+
+
+                    <TextBlock
+                                Text="RAM"
+                               Foreground="#000"
+                               FontWeight="Bold"
+                               FontFamily="Oswald"
+                               FontSize="32"
+                               HorizontalAlignment="Center"
+                               Margin="0,10,0,233" Width="80" RenderTransformOrigin="0.491,0.51" ><Run Language="tr-tr"/></TextBlock>
+
+                    <TextBlock Text="Ram Amount:"
+                                FontWeight="Medium"
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="28"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Margin="0,79,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock  x:Name ="ramAmount"
+                                Text="16 GB"
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="25"
+                               TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="22,123,0,0" RenderTransformOrigin="0.689,1.927" Height="83" Width="258" />
+
+                    <!-- Banchmark score -->
+                    <Border Background="#FFFFFF"
+                            Height="199"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,212,10,0" Grid.RowSpan="2" />
+                    <TextBlock Text="Total Slot:"
+                                FontWeight="Medium"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,227,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock x:Name ="totalSlotNum"
+                               Text="0 slot empty"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,266,0,0" RenderTransformOrigin="0.689,1.927" Height="70" Width="238" Grid.RowSpan="2" />
+                    <TextBlock Text="Empty Slot:"
+                        FontWeight="Medium"
+                        Foreground="#000"
+                        FontFamily="Oswald"
+                        FontSize="28"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        TextWrapping="Wrap"
+                        Margin="0,22,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" Grid.Row="1" />
+                    <TextBlock x:Name ="emptySlotNum"
+                        Text="0 slot empty"
+                        Foreground="#000"
+                        FontFamily="Oswald"
+                        FontSize="28"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        TextWrapping="Wrap"
+                        Margin="0,61,0,0" RenderTransformOrigin="0.689,1.927" Height="70" Width="238" Grid.Row="1" />
+
+
+                </Grid>
+
+            </Border>
+            <!--// Panel 3 //-->
+
+
+            <Border
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Margin="10,40,8,127" Grid.RowSpan="2" Grid.Row="1">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#F96100"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#E70B75"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="59"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="34,0,34,0" />
+
+                    <Border Background="#FFFFFF"
+                            Height="108"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,79,10,0" />
+
+
+                    <TextBlock
+                               Text="DISK"
+                               Foreground="#000"
+                               FontWeight="Bold"
+                               FontFamily="Oswald"
+                               FontSize="32"
+                               HorizontalAlignment="Right"
+                               Margin="0,10,100,374" Width="80" RenderTransformOrigin="0.491,0.51" ><Run Language="tr-tr" /></TextBlock>
+
+                    <TextBlock Text="Read Speed:"
+                                Foreground="#000"
+                                FontWeight="Medium"
+                                FontFamily="Oswald"
+                                FontSize="28"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Margin="0,79,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock x:Name ="diskReadSpeed"
+                                Text="1900 MB/S"
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="25"
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="22,123,0,0" RenderTransformOrigin="0.689,1.927" Height="83" Width="258" />
+                    <Border Background="#FFFFFF"
+                                Height="108"
+                                VerticalAlignment="Top"
+                                CornerRadius="20"
+                                Opacity="0.3" Margin="11,203,9,0" />
+                    <TextBlock Text="Write Speed:"
+                               FontWeight="Medium"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Margin="0,218,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+
+                    <TextBlock x:Name ="diskWriteSpeed"
+                               Text="1200 MB/S"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,257,0,0" RenderTransformOrigin="0.689,1.927" Height="54" Width="238" />
+                    <Border Background="#FFFFFF"
+                                Height="79"
+                                VerticalAlignment="Top"
+                                CornerRadius="20"
+                                Opacity="0.3" Margin="11,333,9,0" />
+                    <TextBlock Text="Windows Disk:"
+                               FontWeight="Medium"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Margin="0,344,0,0" RenderTransformOrigin="0.689,1.927" Height="32" Width="238" />
+
+                    <TextBlock x:Name ="OsDiskType"
+                               Text=""
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,372,0,0" RenderTransformOrigin="0.689,1.927" Height="40" Width="238" />
+
+
+
+                </Grid>
+
+            </Border>
+
+            <!--// Panel 4 //-->
+
+
+            <Border
+                    Grid.Column="4"
+                    CornerRadius="20"
+                    Margin="33,40,0,127" Grid.RowSpan="2" Grid.Row="1">
+
+                <Border.Background>
+
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#06A4FB"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#B84EEB"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="59"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="34,0,34,0" />
+
+                    <Border Background="#FFFFFF"
+                            Height="108"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,212,10,0" />
+                    <Border Background="#FFFFFF"
+                            Height="108"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3" Margin="10,79,10,0" />
+
+                    <TextBlock Text="Upload Speed:"
+                               FontWeight="Medium"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Margin="0,227,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock x:Name ="networkUploadSpeed"
+                               Text="Calculating..."
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="25"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,266,0,0" RenderTransformOrigin="0.689,1.927" Height="54" Width="238" />
+
+                    <TextBlock
+                               Text="NETWORK"
+                               Foreground="#000"
+                               FontFamily="Oswald"
+                               FontSize="32"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Right"
+                               Margin="0,10,56,374" Width="167" RenderTransformOrigin="0.491,0.51" ><Run Language="tr-tr" /></TextBlock>
+
+                    <TextBlock Text="Download Speed:"
+                                FontWeight="Medium"
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="28"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Margin="0,79,0,0" RenderTransformOrigin="0.689,1.927" Height="44" Width="238" />
+                    <TextBlock  x:Name ="networkDownloadSpeed"
+                                Text="Calculating..."
+                                Foreground="#000"
+                                FontFamily="Oswald"
+                                FontSize="25"
+                               TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="22,123,0,0" RenderTransformOrigin="0.689,1.927" Height="83" Width="258" />
+
+                </Grid>
+
+            </Border>
+
+            <!--// Header //-->
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       Foreground="#CDD7E0"
+                       FontFamily="Oswald"
+                       FontSize="40"
+                       Margin="0,32,20,0" ><Run Language="tr-tr" Text="Host Eligibility App"/></TextBlock>
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       Text="I H S A N  Y A Z I L I M"
+                       Foreground="#A6B8C8"
+                       FontFamily="Roboto"
+                       FontSize="20"
+                       VerticalAlignment="Bottom"
+                       Margin="141,0,262,10" />
+
+            <!--// Footer //-->
+
+            <Border Grid.Row="3"
+                    Grid.ColumnSpan="6"
+                    CornerRadius="0,0,20,20" Margin="-28,212,0,-190">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#DF208F"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#DFCF20"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+            </Border>
+            <!--<TextBlock 
+                x:Name ="reportInfo"
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="4"
+                Foreground="#CDD7E0"
+                FontFamily="Oswald"
+                FontSize="18"
+                Margin="0,131,16,-157" ><Run Language="tr-tr" Text=""/></TextBlock>-->
+            <Border Grid.Row="3"
+                    CornerRadius="20"
+                    Margin="75,52,3,-102" Grid.ColumnSpan="5">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#06A4FB"
+                                      Offset="0.8" />
+
+                        <GradientStop Color="#ABDB54"
+                                      Offset="0.2" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+                    <TextBlock x:Name ="yorum"
+                        Text=""
+                        TextWrapping="Wrap"
+                        FontWeight="Medium"
+                        Foreground="#000"
+                        FontFamily="Oswald"
+                        FontSize="28"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center" RenderTransformOrigin="0.689,1.927" Height="64" Width="752" Margin="0,25,0,0" />
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>
